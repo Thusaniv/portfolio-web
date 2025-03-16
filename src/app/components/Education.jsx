@@ -1,51 +1,65 @@
 "use client";
-import React from "react";
 
-const education = [
+import { GraduationCap, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
+
+const educationData = [
   {
-    category: "Programming Languages",
-    items: ["Java", "Python", "PHP", "JavaScript","C#"],
+    year: "2021",
+    degree: "Reading Bachelor of Science Honours degree in Computer Science",
+    institution: "University of Jaffna, Sri Lanka",
+    duration: "Effective from August 2020"
   },
   {
-    category: "Web Development",
-    items: ["React.js", "Next.js", "Node.js"],
-  },
-  {
-    category: "Database Management",
-    items: ["MySQL", "MongoDB"],
-  },
+    year: "2019",
+    degree: "G.C.E. Advanced Level (Mathematics Stream)",
+    institution: "T/ Sri Shanmuga Hindu Ladies College, Sri Lanka",
+    duration: "2017—2019",
+    score: "Z-Score – 1.1251"
+  }
 ];
 
-const Education = () => {
+export default function Education() {
   return (
-    <section id="Education" className="text-white py-12 flex flex-col items-center">
-      {/* Gradient Heading */}
-      <h2 className="text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
-        My Skills
-      </h2>
+    <section className="text-white" id="Education">
+    <div className="mt-4 pt-16 md:mt-0 flex flex-col h-full items-center justify-center">
+  <div className="max-w-5xl mx-auto px-4 py-16 text-center">
+    <h2 className="text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
+      Educational
+    </h2>
+        <div className="relative">
 
-      {/* Skills Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full">
-        {education.map((education, index) => (
-          <div
-            key={index}
-            className="bg-gradient-to-r from-[#3b4b69] to-[#1E1E1E] p-6 rounded-2xl shadow-2xl transform transition-transform duration-300 hover:scale-105"
-          >
-            <h3 className="text-xl font-semibold mb-2 text-blue-400">
-              {education.category}
-            </h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-300">
-              {education.items.map((item, i) => (
-                <li key={i} className="hover:text-white transition duration-300">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          {educationData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative mb-12 ml-8"
+            >
+              <div className="bg-[#3b4b69]/40 backdrop-blur-sm rounded-lg p-6 ml-6 border border-blue-400/10 shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow">
+                <div className="flex items-start gap-4">
+                  <GraduationCap className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{item.degree}</h3>
+                    <div className="flex items-center mb-3 text-blue-300/60 text-lg">
+                      <span> {item.institution}</span>
+                    </div>
+                    <div className="flex items-center text-blue-300/60 text-sm">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span>{item.duration}</span>
+                    </div>
+                    {item.score && (
+                      <p className=" mt-2 text-blue-300/80 text-sm">{item.score}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
+    </div>
     </section>
   );
-};
-
-export default Education;
+}

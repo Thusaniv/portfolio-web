@@ -7,8 +7,9 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+    <section className="lg:py-16 mb-16 h-full">
+      <div className="grid grid-cols-1 sm:grid-cols-12 ">
+        
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -46,7 +47,8 @@ const HeroSection = () => {
               Hire Me
             </Link>
             <Link
-              href="/"
+                href="/Thusani_CV.pdf"
+                download="Thusani_CV.pdf"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary to-secondary hover:bg-slate-800 hover:scale-105 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
@@ -61,15 +63,20 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
-            <Image
-              src="/images/hero-image.png"
-              alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
-            />
-          </div>
+         <div className="ml-10 rounded-full bg-[#181818] w-[250px] h-[250px] sm:w-[300px] md:w-[300px] sm:h-[300px] md:h-[300px]  lg:w-[400px] lg:h-[400px] relative overflow-hidden">
+         <Image
+    src="/images/hero-image.png"
+    alt="hero image"
+    className="mt-6 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    width={400}
+    height={400}
+    style={{
+      objectFit: 'cover', // Ensures the image covers the container without stretching
+      clipPath: 'circle(50%)' // Clipping the image to a circle
+    }}
+  />
+</div>
+
         </motion.div>
       </div>
     </section>

@@ -8,10 +8,19 @@ const variants = {
 };
 
 const NavLink = ({ href, title, active }) => {
+  const handleClick = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="relative inline-block">
       <Link
         href={href}
+        onClick={handleClick} // Handle smooth scroll
         className={`block py-2 pl-1 pr-1 text-[#ADB7BE] sm:text-sm sm:font-bold sm:bg-[#121212] lg:bg-transparent md:bg-transparent rounded-xl md:text-sm lg:text-lg font-bold hover:text-white hover:scale-105 cursor-pointer transition-transform duration-200 ${
           active ? "text-white" : "text-[#ADB7BE]"
         }`}

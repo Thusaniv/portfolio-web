@@ -1,9 +1,11 @@
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
+import ProjectsSection from "./components/Projects";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
+import Education from "./components/Education";
+import Certifications from "./components/certifications";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <Skills />
+        <Education />
+        <Certifications />
         <ProjectsSection />
         
       </div>

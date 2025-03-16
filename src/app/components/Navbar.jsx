@@ -1,10 +1,9 @@
 "use client";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 const navLinks = [
   { title: "About", path: "#about" },
@@ -42,15 +41,13 @@ const Navbar = () => {
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link href={"/"}>
-          <Image
-            src="/images/lodo.png"
-            alt="THUSANI Logo"
-            width={180}
-            height={60}
-            className="object-contain items-center justify-between w-[150px] h-[50px] lg:w-[200px] lg:h-[70px] relative"
-          />
-        </Link>
+        <Image
+          src="/images/lodo.png"
+          alt="THUSANI Logo"
+          width={180}
+          height={60}
+          className="object-contain items-center justify-between w-[150px] h-[50px] lg:w-[200px] lg:h-[70px] relative"
+        />
 
         {/* Mobile Menu Toggle */}
         <div className="mobile-menu block md:hidden">

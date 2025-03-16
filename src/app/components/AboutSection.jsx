@@ -15,8 +15,8 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-    <div className="mt-4 md:mt-0 text-left flex flex-col h-full items-center justify-center">
+    <section className="text-white mt-16 mb-16" id="about">
+    <div className="mt-4 pt-32 md:mt-0 text-left flex flex-col h-full items-center justify-center">
     <h2 className="text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
           About Me
         </h2>

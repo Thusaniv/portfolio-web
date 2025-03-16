@@ -4,11 +4,11 @@ import React from "react";
 const skills = [
   {
     category: "Programming Languages",
-    items: ["Java", "Python", "PHP", "JavaScript","C#"],
+    items: ["Java", "Python","JavaScript","C++"],
   },
   {
     category: "Web Development",
-    items: ["React.js", "Next.js", "Node.js"],
+    items: ["React.js", "Next.js", "Node.js","PHP","HTML","CSS","Tailwind CSS"],
   },
   {
     category: "Database Management",
@@ -19,6 +19,7 @@ const skills = [
 const Skills = () => {
   return (
     <section id="Skills" className="text-white py-12 flex flex-col items-center">
+      <div className="pt-20 md:mt-0 text-left flex flex-col h-full items-center justify-center">
       {/* Gradient Heading */}
       <h2 className="text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
         My Skills
@@ -43,6 +44,7 @@ const Skills = () => {
             </ul>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
