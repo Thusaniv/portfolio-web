@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Certifications from "./components/certifications";
+import { Skillupdate } from "./components/Skillupdate";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
         <Education />
         <Certifications />
         <ProjectsSection />
-        
+        <Contact />
       </div>
       <Footer />
     </main>

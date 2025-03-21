@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 const Projects = () => {
-  const categories = ["All", "Web", "Mobile", "Design"];
+  const categories = ["All", "Web", "Mobile"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: "Job Vacancy System",
       description: "A web-based system to connect students with part-time job opportunities.",
-      image: "/job.jpg",
+      image: "/job.png",
       category: "Web",
       tags: ["PHP", "JavaScript", "HTML", "CSS"],
       githubUrl: "https://github.com/Ravindudeshitha/UOJ-web-project-Jobwavelk",
@@ -58,7 +58,7 @@ const Projects = () => {
       <div className="container mx-auto px-4 md:px-6 pt-24">
         <div className="flex flex-col space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <h2 className="text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
             My Projects
     </h2>
             <p className="text-lg text-muted-foreground">

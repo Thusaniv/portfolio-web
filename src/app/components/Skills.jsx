@@ -21,7 +21,7 @@ const Skills = () => {
     <section id="Skills" className="text-white py-12 flex flex-col items-center">
       <div className="pt-20 md:mt-0 text-left flex flex-col h-full items-center justify-center">
       {/* Gradient Heading */}
-      <h2 className="text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
+      <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
         My Skills
       </h2>
 
