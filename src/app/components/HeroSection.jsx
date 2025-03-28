@@ -46,7 +46,7 @@ const HeroSection = () => {
             >
               Hire Me
             </Link>
-            <Link
+           {/* <Link
               href="/Thusani_CV.pdf"
               download="Thusani_CV.pdf"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary to-secondary hover:bg-slate-800 hover:scale-105 text-white mt-3 sm:mt-0"
@@ -54,7 +54,7 @@ const HeroSection = () => {
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV
               </span>
-            </Link>
+            </Link>*/}
           </div>
         </motion.div>
 
@@ -66,9 +66,9 @@ const HeroSection = () => {
         >
           <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] relative overflow-hidden rounded-full bg-[#181818]">
             <Image
-              src="/images/hero-image.png"
+              src="/images/hero-image.jpeg"
               alt="hero image"
-              className="absolute mt-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute lg:mt-14 sm:mt-10 mt-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               width={400}
               height={400}
               style={{

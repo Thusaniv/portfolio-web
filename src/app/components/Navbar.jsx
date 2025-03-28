@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 import NavLink from "./NavLink";
-
+import Link from "next/link";
 const navLinks = [
   { title: "About", path: "#about" },
   { title: "Skills", path: "#Skills" },
@@ -41,6 +41,7 @@ const Navbar = () => {
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+      <Link href="/" passHref>
         <Image
           src="/images/lodo.png"
           alt="THUSANI Logo"
@@ -48,6 +49,7 @@ const Navbar = () => {
           height={60}
           className="object-contain items-center justify-between w-[150px] h-[50px] lg:w-[200px] lg:h-[70px] relative"
         />
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <div className="mobile-menu block md:hidden">

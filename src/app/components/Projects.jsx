@@ -10,15 +10,7 @@ const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
-    {
-      title: "Blood Donation Mobile App",
-      description: "A mobile app connecting donors with hospitals, enabling real-time donation requests with push notifications.",
-      image: "/mobile.png",
-      category: "Mobile",
-      tags: ["React Native", "Supabase", "Firebase"],
-      githubUrl: "https://github.com/sivavithu/bbmsmobilefinal",
-      liveUrl: null,
-    },
+    
     {
       title: "Blood Bank Management System",
       description: "A web-based system for efficient blood bank management, improving donor-recipient coordination and analytics.",
@@ -27,6 +19,15 @@ const Projects = () => {
       tags: ["React", "Node.js", "Supabase", "Tailwind CSS"],
       githubUrl: "https://github.com/SAYANISHAN98/bbmsweb",
       liveUrl: "https://bbmsweb.vercel.app/"
+    },
+    {
+      title: "Blood Donation Mobile App",
+      description: "A mobile app connecting donors with hospitals, enabling real-time donation requests with push notifications.",
+      image: "/mobile.png",
+      category: "Mobile",
+      tags: ["React Native", "Supabase", "Firebase"],
+      githubUrl: "https://github.com/sivavithu/bbmsmobilefinal",
+      liveUrl: null,
     },
     {
       title: "Job Vacancy System",
@@ -121,11 +122,6 @@ const Projects = () => {
                       </Button>
                     )}
                   </div>
-                  <Button variant="link" asChild className="text-primary">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      View Details
-                    </a>
-                  </Button>
                 </CardFooter>
               </Card>
             ))}
