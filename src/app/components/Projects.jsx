@@ -56,7 +56,7 @@ const Projects = () => {
 
   return (
       <section className="text-white" id="projects">
-      <div className="container mx-auto px-4 md:px-6 pt-24">
+      <div className="container mx-auto px-4 md:px-6 pt-24 pb-8">
         <div className="flex flex-col space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">

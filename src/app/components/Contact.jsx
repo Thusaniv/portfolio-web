@@ -21,8 +21,8 @@ const SocialLink = ({ href, icon, label, className }) => {
 
 const Contact = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 py-16 text-white" id="contact">
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-12">
+    <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 py-1 text-white" id="contact">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-3">
         {/* Heading centered */}
         <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6 text-center">
           Contact Me

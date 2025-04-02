@@ -11,7 +11,11 @@ const navLinks = [
   { title: "Education", path: "#Education" },
   { title: "Certifications", path: "#Certifications" },
   { title: "Projects", path: "#projects" },
+  { title: "Design", path: "#design" },
   { title: "Contact", path: "#contact" },
+  
+
+  
 ];
 
 const Navbar = () => {
