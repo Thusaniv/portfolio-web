@@ -8,15 +8,14 @@ import Link from "next/link";
 const navLinks = [
   { title: "About", path: "#about" },
   { title: "Skills", path: "#Skills" },
+  { title: "Research", path: "#research" },
+  { title: "Projects", path: "#projects" },
   { title: "Education", path: "#Education" },
   { title: "Certifications", path: "#Certifications" },
-  { title: "Projects", path: "#projects" },
   { title: "Design", path: "#design" },
   { title: "Contact", path: "#contact" },
-  
-
-  
 ];
+
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);

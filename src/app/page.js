@@ -4,27 +4,29 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/Projects";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
+import ResearchSection from "./components/ResearchSection";
 import Education from "./components/Education";
 import Certifications from "./components/certifications";
-import { Skillupdate } from "./components/Skillupdate";
 import Contact from "./components/Contact";
 import { Design } from "./components/designs";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <main className="flex min-h-screen flex-col bg-[#050810]/40">
       <Navbar />
-      <div className="container mt-24  mx-auto px-12 py-20">
+      <div className="container mt-16 mx-auto px-6 md:px-12 pt-4 pb-16 relative z-2">
         <HeroSection />
+
         <AboutSection />
         <Skills />
+        <ResearchSection />
+        <ProjectsSection />
         <Education />
         <Certifications />
-        <ProjectsSection />
         <Design />
         <Contact />
       </div>
       <Footer />
     </main>
   );
-}
+}

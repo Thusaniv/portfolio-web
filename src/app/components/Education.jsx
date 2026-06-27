@@ -1,55 +1,103 @@
 "use client";
-
-import { GraduationCap, Calendar } from "lucide-react";
+import React from "react";
+import { GraduationCap, Calendar, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 
-const educationData = [
+const timelineData = [
   {
-    year: "2021",
-    degree: "Reading Bachelor of Science Honours degree in Computer Science",
-    institution: "University of Jaffna, Sri Lanka",
-    duration: "Effective from July 2021"
+    period: "Nov 2025 — Present",
+    type: "Experience",
+    title: "Software Engineer",
+    institution: "Softvision IT Groups (Pvt) Ltd",
+    icon: <Briefcase className="w-4 h-4 text-blue-400" />,
+    description: "Developed a cloud-based ERP system using TypeScript, Node.js, and Microsoft SQL Server. Designed and developed a Flutter-based payroll mobile application.",
   },
   {
-    year: "2019",
-    degree: "G.C.E. Advanced Level (Mathematics Stream)",
+    period: "Jun 2025 — Nov 2025",
+    type: "Experience",
+    title: "Trainee Software Engineer",
+    institution: "Softvision IT Groups (Pvt) Ltd",
+    icon: <Briefcase className="w-4 h-4 text-blue-400" />,
+    description: "Developed a full-stack Payroll Management System using React, Node, Express, and MySQL. Implemented RESTful APIs for backend services and frontend integration.",
+  },
+  {
+    period: "Jun 2021 — Dec 2025 (Expected Oct 2026)",
+    type: "Education",
+    title: "BSc (Hons) in Computer Science",
+    institution: "University of Jaffna, Sri Lanka",
+    icon: <GraduationCap className="w-4 h-4 text-blue-400" />,
+    description: "Successfully pursuing a Computer Science Honours degree. Second Class (Upper Division).",
+  },
+  {
+    period: "May 2017 — Aug 2019",
+    type: "Education",
+    title: "G.C.E. Advanced Level (Physical Science)",
     institution: "T/ Sri Shanmuga Hindu Ladies College, Sri Lanka",
-    duration: "2017—2019",
+    icon: <GraduationCap className="w-4 h-4 text-blue-400" />,
+    description: "Completed secondary education in physical science stream. Results: B, 2C | Z-Score: 1.1251.",
   }
 ];
 
-export default function Education() {
+export default function CareerTimeline() {
   return (
     <section className="text-white" id="Education">
-      <div className="mt-4 pt-16 md:mt-0 flex flex-col h-full items-center justify-center">
-        <div className="max-w-5xl mx-auto px-4 py-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
-            Educational
+      <div className="pt-24 flex flex-col items-center justify-center">
+        <div className="text-center space-y-2 mb-16">
+          <span className="text-xs uppercase tracking-widest font-mono text-blue-400 font-bold bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+            My Journey
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-blue-500 text-transparent bg-clip-text">
+            Career Timeline
           </h2>
-          <div className="relative">
+        </div>
 
-            {educationData.map((item, index) => (
+        <div className="relative max-w-3xl w-full px-6">
+          {/* Vertical Line on the left */}
+          <div className="absolute left-[39px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-blue-500 via-indigo-500 to-indigo-950 opacity-40" />
+
+          <div className="space-y-12">
+            {timelineData.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative mb-12 sm:mb-8 mx-4" // Adjusted for centering
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="relative pl-12 group"
               >
-                <div className="bg-[#3b4b69]/40 backdrop-blur-sm rounded-lg p-6 border border-blue-400/10 shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow">
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                    <GraduationCap className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
-                    <div className="sm:ml-4">
-                      <h3 className="  md:text-xl sm:text-sm font-semibold text-white mb-2">{item.degree}</h3>
-                      <div className=" flex iitems-start mb-3 text-blue-300/60 text-lg md:text-lg sm:text-sm">
-                        <span>{item.institution}</span>
-                      </div>
-                      <div className="  flex items-start text-blue-300/60 text-sm">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        <span>{item.duration}</span>
-                      </div>
-                    </div>
+                {/* Outer Timeline Dot */}
+                <div className="absolute left-8 top-1.5 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-blue-500 bg-[#0a0f1e] group-hover:bg-blue-400 group-hover:scale-125 transition-all duration-300 z-10 flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 bg-[#0a0f1e] rounded-full" />
+                </div>
+
+                <div className="space-y-3">
+                  {/* Capsule Tag Info */}
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/20 text-blue-400">
+                      {item.period}
+                    </span>
+                    <span className="text-xs font-semibold text-blue-200/40">
+                      • {item.type}
+                    </span>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-extrabold text-white tracking-tight group-hover:text-blue-300 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+
+                  {/* Institution / Company */}
+                  <div className="flex items-center gap-2 text-sm text-blue-200/60 font-semibold">
+                    <span className="p-1 bg-blue-500/10 rounded-md">
+                      {item.icon}
+                    </span>
+                    <span>{item.institution}</span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-blue-100/70 max-w-2xl leading-relaxed text-justify">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -59,3 +107,5 @@ export default function Education() {
     </section>
   );
 }
+
+

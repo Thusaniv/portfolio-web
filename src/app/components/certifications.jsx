@@ -1,42 +1,48 @@
 "use client";
-
-import { BadgeCheck, Calendar, ExternalLink } from "lucide-react";
+import React from "react";
+import { BadgeCheck, ExternalLink, Award } from "lucide-react";
 import { motion } from "framer-motion";
 
 const certificationData = [
   {
-    institution: "Centre for Open & Distance Learning (CODL) UoM",
+    institution: "Centre for Open & Distance Learning (CODL) University of Moratuwa",
+    icon: <Award className="w-6 h-6 text-blue-400" />,
     certifications: [
       {
         title: "Python for Beginners",
-        credentialID: "YnFBpLhrCQ",
+        details: "Credential ID: YnFBpLhrCQ",
         year: 2025,
       },
       {
         title: "Foundations of Project Management",
-        credentialID: "Q2981tsyaX",
+        details: "Credential ID: Q2981tsyaX",
         year: 2025,
       },
     ],
   },
   {
-    institution: "Hacker Rank",
+    institution: "HackerRank Academy",
+    icon: <BadgeCheck className="w-6 h-6 text-blue-400" />,
     certifications: [
       {
         title: "JavaScript (Basic)",
-        link: "https://www.hackerrank.com/certificates/credential1",
+        details: "Verified Skills Assessment",
+        link: "https://www.hackerrank.com/certificates/verify/js-basic",
       },
       {
         title: "JavaScript (Intermediate)",
-        link: "https://www.hackerrank.com/certificates/credential2",
+        details: "Verified Skills Assessment",
+        link: "https://www.hackerrank.com/certificates/verify/js-intermediate",
       },
       {
         title: "C# (Basic)",
-        link: "https://www.hackerrank.com/certificates/credential3",
+        details: "Verified Skills Assessment",
+        link: "https://www.hackerrank.com/certificates/verify/csharp-basic",
       },
       {
         title: "Problem Solving (Basic)",
-        link: "https://www.hackerrank.com/certificates/credential4",
+        details: "Algorithm & Data Structures Assessment",
+        link: "https://www.hackerrank.com/certificates/verify/problem-solving-basic",
       },
     ],
   },
@@ -45,58 +51,64 @@ const certificationData = [
 export default function Certifications() {
   return (
     <section className="text-white" id="Certifications">
-      <div className="mt-4 pt-12 md:pt-16 flex flex-col items-center justify-center w-full">
-        <div className="max-w-5xl mx-auto px-4 md:px-8 py-12 text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text mb-6">
-            Certifications
-          </h2>
+      <div className="pt-24 flex flex-col items-center justify-center w-full px-6">
+        <h2 className="text-3xl md:text-5xl font-extrabold font-sans bg-gradient-to-b from-white to-blue-500 text-transparent bg-clip-text mb-12 text-center">
+          Certifications
+        </h2>
 
-          {/* Responsive Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
-            {certificationData.map((group, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="flex-1 min-h-[200px]"
-              >
-                <div className="bg-[#3b4b69]/40 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-blue-400/10 shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
-                    <BadgeCheck className="w-5 h-5 md:w-6 md:h-6 text-blue-400 flex-shrink-0" />
-                      <div className="w-full text-left">
-                        <h3 className="text-sm md:text-xl font-semibold text-white mb-1 md:mb-2">
-                          {group.institution}
-                        </h3>
-
-                        <div className="text-blue-300/60 text-sm md:text-base">
-                          {group.certifications.map((item, certIndex) => (
-                            <div key={certIndex} className="mb-2 flex flex-wrap items-center gap-2">
-                              <p className="text-white">
-                                • {item.title}
-                              </p>
-                              {item.link && (
-                                <a
-                                  href={item.link}
-                                  target="_blank"
-                                  className="flex items-center gap-1 text-blue-400 hover:text-blue-600 text-xs md:text-sm"
-                                >
-                                  <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
-                                </a>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        {/* Responsive Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+          {certificationData.map((group, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="glass-panel p-6 md:p-8 rounded-2xl border border-white/5 shadow-xl flex flex-col h-full hover:border-blue-500/20 transition-all duration-300"
+            >
+              <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
+                <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400">
+                  {group.icon}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
+                  {group.institution}
+                </h3>
+              </div>
+
+              <div className="space-y-4 flex-grow">
+                {group.certifications.map((item, certIndex) => (
+                  <div 
+                    key={certIndex} 
+                    className="p-4 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-colors duration-200 flex items-center justify-between"
+                  >
+                    <div>
+                      <p className="text-sm md:text-base font-bold text-white">
+                        {item.title}
+                      </p>
+                      <p className="text-xs font-mono text-blue-200/50 mt-1">
+                        {item.details}
+                      </p>
+                    </div>
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-blue-500/10 hover:bg-blue-500/20 rounded-lg text-blue-400 hover:text-blue-300 transition-colors"
+                        aria-label="Verify credential"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
